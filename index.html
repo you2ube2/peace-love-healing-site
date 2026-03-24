@@ -4,77 +4,650 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Peace & Love Healing Bath Salt LLC</title>
-  <meta name="description" content="Peace & Love Healing Bath Salt LLC offers soft, feminine self-care essentials with a premium spa-inspired shopping experience." />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    :root{
+      --bg:#fff7fb;
+      --bg-soft:#fff0f8;
+      --card:#ffffff;
+      --text:#4d2d45;
+      --muted:#7b5b74;
+      --primary:#d95fa4;
+      --primary-dark:#b84284;
+      --accent:#a36ad8;
+      --border:#f1d4e6;
+      --shadow:0 12px 30px rgba(183, 96, 156, .12);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, #ffe8f6 0, transparent 30%),
+        radial-gradient(circle at top right, #f1e4ff 0, transparent 25%),
+        linear-gradient(180deg, #fffafd 0%, #fff7fb 100%);
+      line-height:1.55;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(241,212,230,.8);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      background:linear-gradient(135deg, #ffd8ef, #ead7ff);
+      display:grid;
+      place-items:center;
+      box-shadow:var(--shadow);
+      font-size:24px;
+    }
+
+    .brand-text{
+      min-width:0;
+    }
+
+    .brand-title{
+      margin:0;
+      font-size:1.1rem;
+      font-weight:700;
+    }
+
+    .brand-sub{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a, .cart-pill{
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--border);
+      font-weight:600;
+      color:var(--text);
+    }
+
+    .cart-pill{
+      background:linear-gradient(135deg, #ffe6f4, #f2e7ff);
+      border-color:#e8c6dd;
+    }
+
+    .hero{
+      padding:48px 0 18px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-weight:700;
+      font-size:.85rem;
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem, 4vw, 4rem);
+      line-height:1.06;
+      letter-spacing:-.02em;
+    }
+
+    .hero p{
+      margin:0 0 22px;
+      font-size:1.05rem;
+      color:var(--muted);
+      max-width:60ch;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:700;
+      cursor:pointer;
+      border:none;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--primary), var(--accent));
+      color:#fff;
+      box-shadow:0 10px 24px rgba(175, 81, 145, .24);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--border);
+      color:var(--text);
+    }
+
+    .trust-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .trust-chip{
+      background:#fff;
+      border:1px solid var(--border);
+      color:var(--muted);
+      padding:10px 12px;
+      border-radius:999px;
+      font-size:.92rem;
+      font-weight:600;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,250,253,.96));
+      border:1px solid var(--border);
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      padding:24px;
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .mini-tile{
+      border-radius:22px;
+      padding:18px;
+      min-height:132px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      color:#5e3757;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,.7);
+    }
+
+    .tile-1{background:linear-gradient(135deg, #ffe1f1, #ffd6ea)}
+    .tile-2{background:linear-gradient(135deg, #efe1ff, #ead8ff)}
+    .tile-3{background:linear-gradient(135deg, #fff0d9, #ffe7c1)}
+    .tile-4{background:linear-gradient(135deg, #ffe8f6, #f6ebff)}
+
+    section{
+      padding:28px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size:clamp(1.5rem, 2vw, 2.15rem);
+    }
+
+    .section-head p{
+      margin:6px 0 0;
+      color:var(--muted);
+      max-width:60ch;
+    }
+
+    .category-grid,
+    .product-grid,
+    .testimonial-grid,
+    .footer-grid{
+      display:grid;
+      gap:18px;
+    }
+
+    .category-grid{
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .cat-card,
+    .product-card,
+    .info-card,
+    .testimonial{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .cat-card{
+      padding:22px;
+    }
+
+    .cat-icon{
+      width:52px;
+      height:52px;
+      display:grid;
+      place-items:center;
+      border-radius:16px;
+      margin-bottom:14px;
+      font-size:24px;
+      background:linear-gradient(135deg, #ffe5f3, #f2e7ff);
+    }
+
+    .cat-card h3{
+      margin:0 0 8px;
+      font-size:1.08rem;
+    }
+
+    .cat-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .product-grid{
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .product-card{
+      overflow:hidden;
+    }
+
+    .product-image{
+      aspect-ratio:1/1;
+      display:grid;
+      place-items:center;
+      font-size:56px;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.7), transparent 35%),
+        linear-gradient(135deg, #ffe4f2, #efe2ff);
+      border-bottom:1px solid var(--border);
+    }
+
+    .product-body{
+      padding:18px;
+    }
+
+    .product-meta{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:start;
+      margin-bottom:8px;
+    }
+
+    .product-title{
+      margin:0;
+      font-size:1rem;
+      line-height:1.3;
+    }
+
+    .price{
+      font-weight:800;
+      color:var(--primary-dark);
+      white-space:nowrap;
+    }
+
+    .product-desc{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:.94rem;
+      min-height:44px;
+    }
+
+    .product-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .mini-btn{
+      flex:1;
+      border:none;
+      border-radius:999px;
+      padding:11px 14px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .mini-btn.primary{
+      background:linear-gradient(135deg, var(--primary), var(--accent));
+      color:#fff;
+    }
+
+    .mini-btn.ghost{
+      background:#fff;
+      border:1px solid var(--border);
+      color:var(--text);
+    }
+
+    .strip{
+      padding:18px 0;
+    }
+
+    .strip-box{
+      background:linear-gradient(135deg, #fff, #fff6fb);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:18px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      box-shadow:var(--shadow);
+    }
+
+    .strip-item{
+      text-align:center;
+      color:var(--muted);
+      font-weight:700;
+      padding:10px;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .info-card{
+      padding:24px;
+    }
+
+    .info-card h3{
+      margin:0 0 10px;
+      font-size:1.2rem;
+    }
+
+    .info-card p{
+      margin:0 0 12px;
+      color:var(--muted);
+    }
+
+    .info-card ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .testimonial-grid{
+      grid-template-columns:repeat(3,1fr);
+    }
+
+    .testimonial{
+      padding:20px;
+    }
+
+    .testimonial p{
+      margin:0 0 12px;
+      color:var(--muted);
+    }
+
+    .testimonial strong{
+      display:block;
+    }
+
+    .final-cta{
+      background:linear-gradient(135deg, #ffe2f2, #eee3ff);
+      border:1px solid #edcfe3;
+      border-radius:30px;
+      box-shadow:var(--shadow);
+      padding:34px 24px;
+      text-align:center;
+    }
+
+    .final-cta h2{
+      margin:0 0 10px;
+      font-size:clamp(1.7rem, 3vw, 2.6rem);
+    }
+
+    .final-cta p{
+      margin:0 auto 18px;
+      max-width:62ch;
+      color:#6e5568;
+    }
+
+    footer{
+      padding:38px 0 60px;
+    }
+
+    .footer-box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+
+    .footer-grid{
+      grid-template-columns:1.3fr .8fr .8fr .9fr;
+    }
+
+    .footer-box h4{
+      margin:0 0 10px;
+      font-size:1rem;
+    }
+
+    .footer-box p,
+    .footer-box a{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .copyright{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:.92rem;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .cart-toast{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      background:#4d2d45;
+      color:#fff;
+      padding:14px 18px;
+      border-radius:16px;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+      opacity:0;
+      transform:translateY(10px);
+      pointer-events:none;
+      transition:.25s ease;
+      z-index:100;
+    }
+
+    .cart-toast.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .two-col,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .category-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .product-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .testimonial-grid{
+        grid-template-columns:1fr;
+      }
+
+      .strip-box{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 640px){
+      .nav{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .nav-links{
+        width:100%;
+      }
+
+      .nav-links a, .cart-pill{
+        text-align:center;
+      }
+
+      .category-grid,
+      .product-grid,
+      .strip-box,
+      .mini-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding-top:28px;
+      }
+
+      .container{
+        width:min(var(--max), calc(100% - 20px));
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="nav-row">
-        <a class="brand" href="index.html" aria-label="Peace & Love Healing home">
-          <div class="brand-mark"><img src="assets/logo.svg" alt="Peace & Love Healing logo" /></div>
-          <div class="brand-copy">
-            <strong>Peace & Love Healing</strong>
-            <span>Bath Salt LLC · feminine self-care essentials</span>
-          </div>
-        </a>
-        <nav class="main-nav" aria-label="Primary">
-          <a class="active" href="index.html">Home</a>
-          <a href="shop.html">Shop</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="header-actions">
-          <a class="btn btn-secondary" href="shop.html">Shop Now</a>
-          <a class="btn btn-primary cart-pill" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
-          <button class="mobile-nav-toggle" data-mobile-toggle aria-label="Open menu">☰</button>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark">🌸</div>
+        <div class="brand-text">
+          <p class="brand-title">Peace &amp; Love Healing Bath Salt LLC</p>
+          <p class="brand-sub">Soft, feminine self-care essentials</p>
         </div>
       </div>
-      <div class="mobile-sheet" data-mobile-sheet>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
+
+      <div class="nav-links">
+        <a href="#shop">Shop</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a href="cart.html">Cart</a>
+        <a href="#gifting">Gift Sets</a>
+        <a class="cart-pill" href="cart.html">Cart <span id="cartCount">0</span></a>
       </div>
     </div>
-  </header>
+  </div>
 
   <main>
     <section class="hero">
-      <div class="container hero-shell">
-        <div class="hero-copy">
-          <div class="eyebrow">Soft self-care · gift-ready · easy to shop</div>
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Care-centered design</span>
           <h1>Care-centered self-care that feels soft, beautiful, and ready to gift.</h1>
-          <p class="lead">Peace & Love Healing brings together bath, body, and home essentials in a warm pink-and-purple spa-inspired experience designed to feel feminine, welcoming, and easy to trust from the first click.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="shop.html">Shop the Collection</a>
+          <p>
+            Peace &amp; Love Healing brings together bath, body, and home essentials in a warm pink-and-purple spa-inspired experience designed to feel feminine, welcoming, and easy to trust from the first click.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#shop">Shop Now</a>
             <a class="btn btn-secondary" href="#featured">See Featured Favorites</a>
           </div>
+
           <div class="trust-row">
-            <div class="trust-chip">Thoughtful self-care essentials</div>
-            <div class="trust-chip">Gift-friendly presentation</div>
-            <div class="trust-chip">Simple, polished shopping flow</div>
+            <span class="trust-chip">Gift-friendly presentation</span>
+            <span class="trust-chip">Simple shopping flow</span>
+            <span class="trust-chip">Soft spa-inspired style</span>
+            <span class="trust-chip">Made to feel special</span>
           </div>
         </div>
+
         <div class="hero-card">
-          <div class="hero-visual">
-            <div class="hero-grid">
-              <div class="hero-mini"><span>Bath</span><strong>Soft bath soaks</strong></div>
-              <div class="hero-mini"><span>Body</span><strong>Rich moisture care</strong></div>
-              <div class="hero-mini"><span>Home</span><strong>Warm candle moments</strong></div>
-              <div class="hero-mini"><span>Gifting</span><strong>Ready-to-share sets</strong></div>
-            </div>
-            <div class="floating-card">
-              <strong>Product-first by design</strong>
-              <p>Customers can move from homepage to shop to cart quickly, with a warmer brand feel and less friction.</p>
-            </div>
+          <div class="mini-grid">
+            <div class="mini-tile tile-1">Bath<br><small>Soft bath soaks</small></div>
+            <div class="mini-tile tile-2">Body<br><small>Rich moisture care</small></div>
+            <div class="mini-tile tile-3">Home<br><small>Warm candle moments</small></div>
+            <div class="mini-tile tile-4">Gifting<br><small>Ready-to-share sets</small></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="strip">
+      <div class="container">
+        <div class="strip-box">
+          <div class="strip-item">Thoughtful self-care essentials</div>
+          <div class="strip-item">Product-first by design</div>
+          <div class="strip-item">Easy to browse and gift</div>
+          <div class="strip-item">Checkout handoff ready</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop">
       <div class="container">
         <div class="section-head">
           <div>
@@ -82,148 +655,292 @@
             <p>Browse the collection by what your customer needs most right now: bath, body, gifting, or calming home touches.</p>
           </div>
         </div>
-        <div class="category-grid" data-category-grid></div>
+
+        <div class="category-grid">
+          <div class="cat-card">
+            <div class="cat-icon">🛁</div>
+            <h3>Bath Soaks</h3>
+            <p>Relaxing salts and soothing blends made for soft, calming self-care moments.</p>
+          </div>
+          <div class="cat-card">
+            <div class="cat-icon">🧴</div>
+            <h3>Body Care</h3>
+            <p>Butters, oils, and skin-loving essentials with a warm, feminine boutique feel.</p>
+          </div>
+          <div class="cat-card" id="gifting">
+            <div class="cat-icon">🎁</div>
+            <h3>Gift Sets</h3>
+            <p>Shareable self-care pieces arranged to feel thoughtful, polished, and easy to love.</p>
+          </div>
+          <div class="cat-card">
+            <div class="cat-icon">🕯️</div>
+            <h3>Home Comfort</h3>
+            <p>Soft candlelight and calming accents that bring a peaceful mood into any space.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="strip">
-      <div class="container strip-shell">
-        <div class="strip-item"><strong>Warm, polished brand feel</strong><span>Built to feel trustworthy from the first page.</span></div>
-        <div class="strip-item"><strong>Easy shopping path</strong><span>Homepage to shop to cart without confusion.</span></div>
-        <div class="strip-item"><strong>Premium feminine styling</strong><span>Soft color family with generous spacing and clarity.</span></div>
-        <div class="strip-item"><strong>Client-friendly checkout handoff</strong><span>Payment connection can be finalized at launch.</span></div>
-      </div>
-    </section>
-
-    <section class="section" id="featured">
+    <section id="featured">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>Featured favorites</h2>
-            <p>These hero products give the storefront a clear center of gravity and help customers start shopping with confidence.</p>
+            <p>Elegant placeholders are loaded below so the storefront looks complete now and can be swapped with the final product list later.</p>
           </div>
-          <a class="btn btn-secondary" href="shop.html">View All Products</a>
         </div>
-        <div class="product-grid" data-featured-products></div>
+
+        <div class="product-grid" id="productGrid"></div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container info-grid">
-        <article class="panel card">
-          <h2>Why customers choose Peace & Love Healing</h2>
-          <p>This first version is designed to feel calm, polished, and easy to trust. The layout keeps the brand feminine and inviting while giving the customer a faster path to discovery and purchase.</p>
-          <div class="value-grid">
-            <div class="value-card card">
-              <h3>Beautifully simple</h3>
-              <p>Clear navigation, generous spacing, and clean product cards keep the shopping experience light and easy.</p>
-            </div>
-            <div class="value-card card">
-              <h3>Premium without pressure</h3>
-              <p>The site feels elevated and giftable while still warm, welcoming, and easy to understand.</p>
-            </div>
-            <div class="value-card card">
-              <h3>Ready for growth</h3>
-              <p>The structure supports future updates for real product photos, expanded copy, and multilingual rollout.</p>
-            </div>
-          </div>
-        </article>
-        <article class="panel card" id="about">
-          <h2>Care-centered design</h2>
-          <p>Peace & Love Healing is presented as a self-care brand built around softness, healing, and everyday beauty. This experience keeps the focus on comfort, giftability, and trust while making the shopping flow feel smooth and natural.</p>
-          <ul class="list-clean">
-            <li>Warm, welcoming homepage messaging</li>
-            <li>Product-first structure that encourages faster browsing</li>
-            <li>Elegant placeholder descriptions ready for real product details</li>
-            <li>Consistent logo visibility and brand cohesion</li>
+    <section>
+      <div class="container two-col">
+        <div class="info-card" id="about">
+          <h3>Why customers choose Peace &amp; Love Healing</h3>
+          <p>
+            This brand is designed to feel soft, polished, and easy to trust. The shopping experience is clear, the presentation is gift-friendly, and the mood stays warm from the first click to the cart.
+          </p>
+          <ul>
+            <li>Warm, polished brand feel</li>
+            <li>Easy shopping path from homepage to cart</li>
+            <li>Premium feminine styling without clutter</li>
+            <li>Client-friendly checkout handoff</li>
           </ul>
-        </article>
+        </div>
+
+        <div class="info-card">
+          <h3>Care-centered design</h3>
+          <p>
+            Every section is meant to feel welcoming, gentle, and beautifully arranged. The layout stays focused on products first, with enough trust-building detail to support buying decisions without slowing the shopper down.
+          </p>
+          <ul>
+            <li>Soft color family and generous spacing</li>
+            <li>Simple category flow</li>
+            <li>Product cards that are easy to scan</li>
+            <li>Ready for multilingual expansion later</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section>
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Customer love</h2>
-            <p>These placeholders hold space for real testimonials later while keeping the first version visually complete.</p>
+            <h2>What customers might say</h2>
+            <p>These can be replaced with real testimonials once provided.</p>
           </div>
         </div>
-        <div class="testimonial-grid" data-testimonials></div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial">
+            <p>“Beautiful presentation, soft scent, and a gift that felt thoughtful the moment it arrived.”</p>
+            <strong>Gift buyer</strong>
+          </div>
+          <div class="testimonial">
+            <p>“The site was easy to shop, and the products felt calm, feminine, and special.”</p>
+            <strong>First-time customer</strong>
+          </div>
+          <div class="testimonial">
+            <p>“A lovely self-care purchase that felt personal without being overdone.”</p>
+            <strong>Repeat shopper</strong>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section>
       <div class="container">
-        <div class="gift-banner">
-          <div>
-            <h2>Made for self-care and thoughtful gifting</h2>
-            <p class="footer-note">Whether someone is shopping for a quiet evening, a beautiful thank-you gift, or a personal reset, the collection is framed to feel intentional and easy to give.</p>
+        <div class="final-cta">
+          <h2>Give soft self-care or keep it for yourself.</h2>
+          <p>
+            Peace &amp; Love Healing is built for gifting, unwinding, and choosing beautiful essentials that feel easy to enjoy. Start with featured favorites and build from there.
+          </p>
+          <div class="cta-row" style="justify-content:center;">
+            <a class="btn btn-primary" href="#featured">Shop Featured Products</a>
+            <a class="btn btn-secondary" href="#contact">Contact</a>
           </div>
-          <a class="btn btn-primary" href="shop.html">Shop Gift-Friendly Favorites</a>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container info-grid">
-        <article class="panel card">
-          <h2>About the brand</h2>
-          <p>Peace & Love Healing Bath Salt LLC is positioned as a soft, premium self-care brand rooted in calm, comfort, and beautiful daily rituals that feel approachable and trustworthy.</p>
-          <p>This first version gives the brand a stronger online presence now while leaving room for final product details, true testimonials, and payment connection during launch.</p>
-        </article>
-        <article class="panel card">
-          <h2>Contact</h2>
-          <p>Email: <span data-brand-email></span></p>
-          <p>Phone: <span data-brand-phone></span></p>
-          <p>Instagram: @peaceandlovehealing</p>
-          <p class="policy-note">Policy links, shipping details, and returns language can be finalized during the next light revision pass.</p>
-          <a class="btn btn-primary" href="shop.html">Start Shopping</a>
-        </article>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="container">
-      <div class="footer-grid">
-        <div class="brand-wrap">
-          <div class="brand" style="margin-bottom:14px;">
-            <div class="brand-mark"><img src="assets/logo.svg" alt="Peace & Love Healing logo" /></div>
-            <div class="brand-copy">
-              <strong>Peace & Love Healing</strong>
-              <span>Bath Salt LLC</span>
+      <div class="footer-box">
+        <div class="footer-grid">
+          <div>
+            <h4>Peace &amp; Love Healing Bath Salt LLC</h4>
+            <p>Soft, feminine bath, body, and gift-friendly essentials in a warm spa-inspired presentation.</p>
+          </div>
+
+          <div>
+            <h4>Shop</h4>
+            <div class="footer-links">
+              <a href="#shop">Bath</a>
+              <a href="#shop">Body</a>
+              <a href="#gifting">Gift Sets</a>
+              <a href="cart.html">Cart</a>
             </div>
           </div>
-          <p class="footer-note">Soft, feminine, care-centered self-care with a cleaner, more modern shopping experience.</p>
+
+          <div id="contact">
+            <h4>Contact</h4>
+            <div class="footer-links">
+              <a href="mailto:hello@peaceandlovehealing.com">hello@peaceandlovehealing.com</a>
+              <a href="tel:+10000000000">(000) 000-0000</a>
+              <a href="#">Instagram placeholder</a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Policies</h4>
+            <div class="footer-links">
+              <a href="#">Shipping Policy</a>
+              <a href="#">Returns Policy</a>
+              <a href="#">Privacy Policy</a>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4>Shop</h4>
-          <a href="shop.html">All Products</a>
-          <a href="shop.html?category=bath-salts">Bath Salts</a>
-          <a href="shop.html?category=gift-sets">Gift Sets</a>
+
+        <div class="copyright">
+          <span>© 2026 Peace &amp; Love Healing Bath Salt LLC</span>
+          <span>Checkout/payment connection can be finalized at launch.</span>
         </div>
-        <div>
-          <h4>About</h4>
-          <a href="#about">Brand Story</a>
-          <a href="#contact">Contact</a>
-          <a href="checkout.html">Checkout</a>
-        </div>
-        <div>
-          <h4>Policies</h4>
-          <a href="#">Shipping Policy</a>
-          <a href="#">Return Policy</a>
-          <a href="#">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Peace & Love Healing Bath Salt LLC</span>
-        <span>First review build · payment setup final step handled by client</span>
       </div>
     </div>
   </footer>
 
-  <script src="assets/data.js"></script>
-  <script src="assets/app.js"></script>
+  <div class="cart-toast" id="toast">Added to cart</div>
+
+  <script>
+    const fallbackProducts = [
+      {
+        id: "bath-001",
+        name: "Rose Quartz Bath Soak",
+        price: 18,
+        emoji: "🛁",
+        description: "A soft, calming soak with a feminine spa feel and gift-ready appeal."
+      },
+      {
+        id: "body-001",
+        name: "Honey Shea Body Butter",
+        price: 22,
+        emoji: "🧴",
+        description: "Rich moisture care designed to feel smooth, comforting, and indulgent."
+      },
+      {
+        id: "soap-001",
+        name: "Blush Petal Soap",
+        price: 12,
+        emoji: "🧼",
+        description: "A gentle cleansing bar with a clean presentation and soft boutique mood."
+      },
+      {
+        id: "home-001",
+        name: "Moonlight Glow Candle",
+        price: 24,
+        emoji: "🕯️",
+        description: "A warm home accent made to support rest, gifting, and beautiful quiet moments."
+      },
+      {
+        id: "gift-001",
+        name: "Soft Healing Gift Set",
+        price: 38,
+        emoji: "🎁",
+        description: "A thoughtful self-care set arranged to feel easy to give and lovely to receive."
+      },
+      {
+        id: "bath-002",
+        name: "Lavender Peace Soak",
+        price: 19,
+        emoji: "💜",
+        description: "A calming bath blend with a soft floral mood and easy evening appeal."
+      },
+      {
+        id: "oil-001",
+        name: "Velvet Vanilla Body Oil",
+        price: 21,
+        emoji: "✨",
+        description: "A silky finishing touch for skin that feels polished, warm, and feminine."
+      },
+      {
+        id: "bath-003",
+        name: "Quiet Bloom Bath Soak",
+        price: 17,
+        emoji: "🌸",
+        description: "A light, elegant soak crafted for unwinding and gentle self-care rituals."
+      }
+    ];
+
+    const productGrid = document.getElementById("productGrid");
+    const cartCount = document.getElementById("cartCount");
+    const toast = document.getElementById("toast");
+
+    function getCart() {
+      try {
+        return JSON.parse(localStorage.getItem("plh_cart")) || [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function setCart(cart) {
+      localStorage.setItem("plh_cart", JSON.stringify(cart));
+      updateCartCount();
+    }
+
+    function updateCartCount() {
+      const cart = getCart();
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartCount.textContent = totalQty;
+    }
+
+    function addToCart(productId) {
+      const product = fallbackProducts.find(p => p.id === productId);
+      if (!product) return;
+
+      const cart = getCart();
+      const existing = cart.find(item => item.id === productId);
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          qty: 1
+        });
+      }
+
+      setCart(cart);
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1400);
+    }
+
+    function renderProducts() {
+      productGrid.innerHTML = fallbackProducts.map(product => `
+        <article class="product-card">
+          <div class="product-image">${product.emoji}</div>
+          <div class="product-body">
+            <div class="product-meta">
+              <h3 class="product-title">${product.name}</h3>
+              <div class="price">$${product.price}</div>
+            </div>
+            <p class="product-desc">${product.description}</p>
+            <div class="product-actions">
+              <button class="mini-btn primary" onclick="addToCart('${product.id}')">Add to Cart</button>
+              <a class="mini-btn ghost" href="shop.html">Shop More</a>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    renderProducts();
+    updateCartCount();
+  </script>
 </body>
 </html>
