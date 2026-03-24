@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Peace & Love Healing</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-row">
+        <a class="brand" href="index.html">
+          <div class="brand-mark"><img src="assets/logo.svg" alt="Peace & Love Healing logo" /></div>
+          <div class="brand-copy">
+            <strong>Peace & Love Healing</strong>
+            <span>Checkout handoff</span>
+          </div>
+        </a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="cart.html">Cart</a>
+          <a class="active" href="checkout.html">Checkout</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-secondary" href="cart.html">Back to Cart</a>
+          <a class="btn btn-primary cart-pill" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+          <button class="mobile-nav-toggle" data-mobile-toggle aria-label="Open menu">☰</button>
+        </div>
+      </div>
+      <div class="mobile-sheet" data-mobile-sheet>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="cart.html">Cart</a>
+        <a href="checkout.html">Checkout</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Checkout-ready handoff</h2>
+            <p>This page keeps the customer journey complete for review while payment connection is finalized later.</p>
+          </div>
+        </div>
+        <div class="checkout-layout">
+          <article class="panel card">
+            <h3>Customer information</h3>
+            <p class="checkout-note">Use this first version to demonstrate a clean, trustworthy checkout experience. Final processor connection can be added during launch.</p>
+            <form class="input-grid" data-checkout-form>
+              <div class="field"><label for="firstName">First name</label><input id="firstName" type="text" placeholder="First name" required /></div>
+              <div class="field"><label for="lastName">Last name</label><input id="lastName" type="text" placeholder="Last name" required /></div>
+              <div class="field full"><label for="email">Email</label><input id="email" type="email" placeholder="Email address" required /></div>
+              <div class="field full"><label for="address">Address</label><input id="address" type="text" placeholder="Street address" /></div>
+              <div class="field"><label for="city">City</label><input id="city" type="text" placeholder="City" /></div>
+              <div class="field"><label for="state">State</label><input id="state" type="text" placeholder="State" /></div>
+              <div class="field"><label for="zip">ZIP code</label><input id="zip" type="text" placeholder="ZIP code" /></div>
+              <div class="field"><label for="delivery">Delivery preference</label>
+                <select id="delivery">
+                  <option>Standard shipping</option>
+                  <option>Gift-ready order</option>
+                  <option>Local pickup placeholder</option>
+                </select>
+              </div>
+              <div class="field full"><label for="notes">Order notes</label><textarea id="notes" placeholder="Gift note, fragrance preference, or special request"></textarea></div>
+              <div class="field full">
+                <button class="btn btn-primary" type="submit">Submit Review Checkout</button>
+              </div>
+            </form>
+          </article>
+          <div data-checkout-summary></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <span>© 2026 Peace & Love Healing Bath Salt LLC</span>
+      <span>Payment provider connection remains the final client-side setup step.</span>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

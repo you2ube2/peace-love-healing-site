@@ -1,0 +1,21 @@
+<svg width="960" height="1020" viewBox="0 0 960 1020" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="112" y1="68" x2="828" y2="934" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE2F2"/>
+      <stop offset="1" stop-color="#E2D8FF"/>
+    </linearGradient>
+    <linearGradient id="jar" x1="324" y1="274" x2="642" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#FFF8FC" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="1020" rx="80" fill="url(#bg)"/>
+  <circle cx="188" cy="172" r="118" fill="#FFFFFF" fill-opacity="0.38"/>
+  <circle cx="780" cy="812" r="164" fill="#FFFFFF" fill-opacity="0.24"/>
+  <rect x="304" y="240" width="352" height="470" rx="44" fill="url(#jar)" stroke="#FFFFFF" stroke-width="8"/>
+  <rect x="342" y="176" width="276" height="88" rx="28" fill="#F7D3EA"/>
+  <rect x="358" y="360" width="244" height="168" rx="32" fill="#FFF1F8"/>
+  <text x="480" y="435" text-anchor="middle" fill="#4B2249" font-size="38" font-family="Arial, Helvetica, sans-serif" font-weight="700">Velvet Vanilla</text>
+  <text x="480" y="486" text-anchor="middle" fill="#7D637E" font-size="24" font-family="Arial, Helvetica, sans-serif">Body Oil</text>
+  <text x="480" y="836" text-anchor="middle" fill="#4B2249" font-size="44" font-family="Arial, Helvetica, sans-serif" font-weight="700">Peace &amp; Love Healing</text>
+</svg>

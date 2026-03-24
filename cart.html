@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart | Peace & Love Healing</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-row">
+        <a class="brand" href="index.html">
+          <div class="brand-mark"><img src="assets/logo.svg" alt="Peace & Love Healing logo" /></div>
+          <div class="brand-copy">
+            <strong>Peace & Love Healing</strong>
+            <span>Review your cart</span>
+          </div>
+        </a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a class="active" href="cart.html">Cart</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-secondary" href="shop.html">Keep Shopping</a>
+          <a class="btn btn-primary cart-pill" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+          <button class="mobile-nav-toggle" data-mobile-toggle aria-label="Open menu">☰</button>
+        </div>
+      </div>
+      <div class="mobile-sheet" data-mobile-sheet>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="cart.html">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Your cart</h2>
+            <p>A polished review step before the checkout handoff.</p>
+          </div>
+        </div>
+        <div class="cart-layout">
+          <div class="cart-items" data-cart-items></div>
+          <div data-cart-summary></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <span>© 2026 Peace & Love Healing Bath Salt LLC</span>
+      <span><a class="muted-link" href="checkout.html">Continue to Checkout</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

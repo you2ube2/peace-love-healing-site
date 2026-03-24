@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | Peace & Love Healing</title>
+  <meta name="description" content="Browse Peace & Love Healing self-care products and gift-friendly favorites." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-row">
+        <a class="brand" href="index.html">
+          <div class="brand-mark"><img src="assets/logo.svg" alt="Peace & Love Healing logo" /></div>
+          <div class="brand-copy">
+            <strong>Peace & Love Healing</strong>
+            <span>Bath Salt LLC · shop the collection</span>
+          </div>
+        </a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a class="active" href="shop.html">Shop</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-secondary" href="index.html#featured">Featured</a>
+          <a class="btn btn-primary cart-pill" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+          <button class="mobile-nav-toggle" data-mobile-toggle aria-label="Open menu">☰</button>
+        </div>
+      </div>
+      <div class="mobile-sheet" data-mobile-sheet>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="cart.html">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom:8px;">
+      <div class="container hero-copy card" style="max-width:none;">
+        <div class="eyebrow">Shop Peace & Love Healing</div>
+        <h1 style="font-size:clamp(2rem,3vw,3.35rem);">Browse self-care favorites with a cleaner, easier shopping path.</h1>
+        <p class="lead">Choose by category, scan product cards quickly, and add what you love without friction.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filters" data-filters></div>
+        <div class="product-grid" data-shop-grid></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <span>© 2026 Peace & Love Healing Bath Salt LLC</span>
+      <span><a class="muted-link" href="cart.html">Review Cart</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
